@@ -3,12 +3,15 @@
   grid-area: n;
   background-color: yellow;
   height: 200%;
+  padding: 20px;
 }
 
 .item {
   color: green;
+  text-decoration: none;
 }
 
-.item.active {
-  color: gold;
+.active {
+  color: white;
+  text-decoration: none;
 }

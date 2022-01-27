@@ -1,31 +1,37 @@
 import React from "react";
-import classes from "./Navbar.module.css";
+import { NavLink } from "react-router-dom";
+import s from "./Navbar.module.css";
 
-// let classes = {
+// let s = {
 //   'nav': 'Navbar_nav__tQTpC',
 //    'item': 'Navbar_item__RDo8d',
 //     'active': ''
 // }
 
-let classesNew = `${classes.item} ${classes.active}`;
+
 
 const Navbar = () => {
   return (
-    <nav className={classes.nav}>
-      <div className={classes.item}>
-        <a href='/Profile'> Profile </a>
+    <nav className={s.nav}>
+      <div>
+        <NavLink className={data=>data.isActive ? 
+          s.active : s.item} to='/Profile' > Profile </NavLink>
       </div>
-      <div className={classesNew}>
-        <a href='/Messages'> Messages </a>
+      <div>
+        <NavLink to='/Dialogs' className={data=>data.isActive ? 
+          s.active : s.item}> Messages </NavLink>
       </div>
-      <div className={classes.item}>
-        <a href='/News'> News </a>
+      <div>
+        <NavLink to='/News' className={data=>data.isActive ? 
+          s.active : s.item}> News </NavLink>
       </div>
-      <div className={classes.item}>
-        <a href='/Music'> Music </a>
+      <div>
+        <NavLink to='/Music' className={data=>data.isActive ? 
+          s.active : s.item}> Music </NavLink>
       </div>
-      <div className={classes.item}>
-        <a href='/Settings'> Settings </a>
+      <div>
+        <NavLink to='/Settings' className={data=>data.isActive ? 
+          s.active : s.item}> Settings </NavLink>
       </div>
     </nav>
   );
